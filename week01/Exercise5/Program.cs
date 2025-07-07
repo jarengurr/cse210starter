@@ -1,9 +1,76 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
+
+
+
+
+
 
 class Program
 {
+    static void DisplayWelcome()
+    {
+        Console.WriteLine("Welcome to the program!");
+    }
+
+    static string PromptUserName()
+    {
+        string name;
+        Console.Write("Please enter your name:  ");
+        name = Console.ReadLine();
+
+
+        return name;
+
+    }
+
+    static int PromptUserNumber()
+    {
+        int favNumber;
+        Console.Write("Please enter your favorite number:  ");
+        favNumber = int.Parse(Console.ReadLine());
+        return favNumber;
+    }
+
+    static int SquareNumber(int number)
+    {
+        int sqNumber;
+        sqNumber = number * number;
+        return sqNumber;
+    }
+
+    static void DisplayResult(int sqNumber, string name)
+    {
+        Console.WriteLine($"{name}, the square of your number is {sqNumber}");
+    }
+
+
+
+
+
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise5 Project.");
+        string theName;
+        int theNumber;
+        int squareNum;
+
+        DisplayWelcome();
+
+
+        theName = PromptUserName();
+
+        theNumber = PromptUserNumber();
+
+        squareNum = SquareNumber(theNumber);
+
+        DisplayResult(squareNum, theName);
+
+
+
+
+
+
+
+
     }
 }
