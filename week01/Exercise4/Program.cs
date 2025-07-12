@@ -23,7 +23,7 @@ class Program
 
             if (theNumber != 0) // take the number entered in by person and add to list
             {
-                myNumbers.Add(theNumber);
+                // myNumbers.Add(theNumber);
 
             }
 
