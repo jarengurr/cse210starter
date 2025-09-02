@@ -20,11 +20,12 @@ public class Journal()
     public void SaveToFile(string saveme)
     {
         string filepath = "journal.text";
-
         using (StreamWriter outputfile = new StreamWriter(filepath, true))
         {
             outputfile.WriteLine(saveme);
         }
+
+       
 
     }
 

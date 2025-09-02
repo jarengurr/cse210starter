@@ -16,7 +16,7 @@ class Program
         
         do
         {
-            Console.Write("What is your guess?  ");
+            Console.Write("What is your guess? Enter number 1 to 20 ");
             holdGuess = Console.ReadLine();
             holdGuessNum = int.Parse(holdGuess);
 
