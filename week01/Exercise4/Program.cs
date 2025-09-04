@@ -18,6 +18,7 @@ class Program
 
         do
         {
+            Console.WriteLine("Please Enter a number to add to a list.");
 
             theNumber = int.Parse(Console.ReadLine());
 
@@ -51,7 +52,7 @@ class Program
         Console.WriteLine($"The average is:  {avgNum}");
         Console.WriteLine($"The largent number is:  {largestNum}");
         Console.WriteLine();
-        Console.WriteLine("Hello World! This is the Exercise 4 Project.");
+        Console.WriteLine("This is the Exercise 4 Project.");
 
 
 

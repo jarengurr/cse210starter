@@ -38,7 +38,7 @@ class Program
             }
 
         } while (exit == "zero");
-    Console.WriteLine("Hello World! This is the Exercise 3 Project.");
+    Console.WriteLine("This is the Exercise 3 Project.");
         
 
     }

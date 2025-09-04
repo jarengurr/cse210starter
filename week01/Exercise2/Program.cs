@@ -29,7 +29,7 @@ class Program
             Console.WriteLine($"Congratulations on passing the course with the grade {letter}.");
         else
             Console.WriteLine($"You received a grade of {letter}. Good try. Don't give up, just try again.");
-        Console.WriteLine("Hello World! This is the Exercise 2 Project.");
+        Console.WriteLine("This is the Exercise 2 Project.");
 
     }
 }
