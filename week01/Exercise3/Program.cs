@@ -4,16 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-        
+
+
         string holdGuess;
         int holdMagicNum;
         int holdGuessNum;
         string exit;
         Random randomGenerator = new Random();
-       
+
         holdMagicNum = randomGenerator.Next(1, 20);
-        
+
         do
         {
             Console.Write("What is your guess? Enter number 1 to 20 ");
@@ -38,6 +38,7 @@ class Program
             }
 
         } while (exit == "zero");
+    Console.WriteLine("Hello World! This is the Exercise 3 Project.");
         
 
     }

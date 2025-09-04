@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise4 Project.");
+
 
         List<int> myNumbers;
         myNumbers = new List<int>();
@@ -18,12 +18,12 @@ class Program
 
         do
         {
-            
+
             theNumber = int.Parse(Console.ReadLine());
 
             if (theNumber != 0) // take the number entered in by person and add to list
             {
-                 myNumbers.Add(theNumber);
+                myNumbers.Add(theNumber);
 
             }
 
@@ -50,6 +50,8 @@ class Program
         Console.WriteLine($"The sum is:  {numTotal}");
         Console.WriteLine($"The average is:  {avgNum}");
         Console.WriteLine($"The largent number is:  {largestNum}");
+        Console.WriteLine();
+        Console.WriteLine("Hello World! This is the Exercise 4 Project.");
 
 
 
