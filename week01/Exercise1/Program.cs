@@ -12,5 +12,6 @@ class Program
         string lastname = Console.ReadLine();
         Console.WriteLine($"Your name is {lastname},  {firstname}  {lastname}");
         Console.WriteLine("This is the Exercise 1 Project.");
+        Console.WriteLine();
     }
 }

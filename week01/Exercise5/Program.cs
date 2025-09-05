@@ -54,6 +54,8 @@ class Program
         int theNumber;
         int squareNum;
 
+        Console.WriteLine();
+
         DisplayWelcome();
 
 
@@ -65,7 +67,9 @@ class Program
 
         DisplayResult(squareNum, theName);
 
+        Console.WriteLine();
         Console.WriteLine("This is the Exercise 5 Project.");
+        Console.WriteLine();
 
 
 
