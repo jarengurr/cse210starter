@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 class Program
 {
@@ -7,6 +8,8 @@ class Program
 
         float gradePercentNum;
         string letter;
+        string negP = "";
+        float negPos;
 
         Console.Write("Please Enter your grade percentange:");
         string gradePercent = Console.ReadLine();
@@ -24,12 +27,25 @@ class Program
         else
             letter = "F";
 
+        negPos = gradePercentNum % 10;
+
+
+        if (negPos >= 7 && gradePercentNum < 90 && gradePercentNum > 60)
+        {
+            negP = "+";
+        }
+
+        if (negPos < 3 && gradePercentNum > 60)
+        {
+            negP = "-";
+        }
 
         if (gradePercentNum >= 70.0)
-            Console.WriteLine($"Congratulations on passing the course with the grade {letter}.");
+            Console.WriteLine($"Congratulations on passing the course with the grade {letter}{negP}.");
         else
-            Console.WriteLine($"You received a grade of {letter}. Good try. Don't give up, just try again.");
+            Console.WriteLine($"You received a grade of {letter}{negP}. Good try. Don't give up, just try again.");
         Console.WriteLine("This is the Exercise 2 Project.");
+        Console.WriteLine();
 
     }
 }
