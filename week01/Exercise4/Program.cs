@@ -46,9 +46,9 @@ foreach (int myNumber in myNumbers) //find the largest number in list
 
 foreach (int myNumber in myNumbers) //find the largest number in list
 {
-    if (smallestNum < myNumber && smallestNum > 0)
+    if (smallestNum < myNumber && smallestNum > 0 && smallestNum !=0)//not working may need to use for loop
         smallestNum = myNumber;
-
+    Console.WriteLine(myNumber);
 }
 Console.WriteLine($"The smallest positive number is {smallestNum}");
 myNumbers.Sort();
