@@ -13,21 +13,18 @@ class Program
 
     static int preSmallNum(List<int> myNumber2)
     {
-        int hold;
-        
+        int hold = -1;
+
         for (int x = 0; x < myNumber2.Count; x++)
         {
-
             if (myNumber2[x] > 0)
             {
-                 hold = myNumber2[x];
+                hold = myNumber2[x];
             }
-               
-
-
         }
 
         return hold;
+
     }
     static void Main(string[] args)
     {
