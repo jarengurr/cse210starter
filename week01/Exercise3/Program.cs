@@ -17,7 +17,7 @@ class Program
 
         holdMagicNum = randomGenerator.Next(1, 20);
         Console.WriteLine();
-        Console.WriteLine("You will guess the number until you guess the right number. The computer will give you a hint of if your number is too high or too low.");
+        Console.WriteLine("You will guess a number the computer picks until you guess the right number. The computer will give you a hint of if your number is too high or too low.");
         Console.WriteLine(holdMagicNum);
         do
         {
