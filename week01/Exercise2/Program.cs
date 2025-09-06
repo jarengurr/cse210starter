@@ -1,5 +1,5 @@
 using System;
-
+// I added stretch challenges on exercise 2 - 5.
 
 class Program
 {

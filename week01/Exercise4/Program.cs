@@ -68,6 +68,8 @@ class Program
         }
        
         smallestNum = PreSmallNum(myNumbers); // find a positive number in the list. It will return a -1 if no positive numbers are found.
+        if (smallestNum == -1)
+            Console.WriteLine("No positive numbers found!");
         foreach (int myNumber in myNumbers) //find the smallest positive number in list
         {
             if (myNumber > 0)// use myNumber not smallestNum Help from AI
