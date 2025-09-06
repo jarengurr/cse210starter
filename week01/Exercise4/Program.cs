@@ -1,17 +1,11 @@
 using System;
-//using System.Collections.Generic;
+
 
 class Program
 {
 
 
-
-
-
-
-
-
-    static int preSmallNum(List<int> myNumber2)
+    static int PreSmallNum(List<int> myNumber2)// find positive number in a list and return a -1 if no positive numbers are found.
     {
         int hold = -1;
 
@@ -26,6 +20,8 @@ class Program
         return hold;
 
     }
+    
+
     static void Main(string[] args)
     {
 
@@ -39,7 +35,7 @@ class Program
         int smallestNum;
 
 
-        do
+        do // loop to enter numbers
         {
             Console.WriteLine("Please Enter a number to add to a list.");
 
@@ -62,6 +58,7 @@ class Program
         }
 
         avgNum = numTotal / countList; // find the avg of the numbers in list
+
         largestNum = myNumbers[0];
         foreach (int myNumber in myNumbers) //find the largest number in list
         {
@@ -69,8 +66,8 @@ class Program
                 largestNum = myNumber;
 
         }
-       
-        smallestNum = preSmallNum(myNumbers); // find a positive number in the list. It will return a -1 if no positive numbers are found.
+        //*******************************  Question: is zero a positive number for this assignment?
+        smallestNum = PreSmallNum(myNumbers); // find a positive number in the list. It will return a -1 if no positive numbers are found.
         foreach (int myNumber in myNumbers) //find the smallest positive number in list
         {
             if (myNumber > 0)// use myNumber not smallestNum Help from AI
@@ -86,13 +83,14 @@ class Program
 
 
 
-        Console.WriteLine($"The smallest positive number is {smallestNum}");
+        
         myNumbers.Sort();
 
         Console.WriteLine($"The sum is:  {numTotal}");
         Console.WriteLine($"The average is:  {avgNum}");
         Console.WriteLine($"The largent number is:  {largestNum}");
-        Console.WriteLine();
+        Console.WriteLine($"The smallest positive number is {smallestNum}");
+        Console.WriteLine("The sorted list is: ");
 
         for (int count = 0; count < myNumbers.Count; count++)// print out list
         {
