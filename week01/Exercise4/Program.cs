@@ -66,7 +66,7 @@ class Program
                 largestNum = myNumber;
 
         }
-        //*******************************  Question: is zero a positive number for this assignment?
+       
         smallestNum = PreSmallNum(myNumbers); // find a positive number in the list. It will return a -1 if no positive numbers are found.
         foreach (int myNumber in myNumbers) //find the smallest positive number in list
         {
