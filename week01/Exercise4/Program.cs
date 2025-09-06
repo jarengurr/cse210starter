@@ -69,9 +69,8 @@ class Program
                 largestNum = myNumber;
 
         }
-        //smallestNum = 1000; // use a larger number then found in list Help from AI. 1000 will not be found as smallest number at this time.
-
-        smallestNum = preSmallNum(myNumbers);
+       
+        smallestNum = preSmallNum(myNumbers); // find a positive number in the list. It will return a -1 if no positive numbers are found.
         foreach (int myNumber in myNumbers) //find the smallest positive number in list
         {
             if (myNumber > 0)// use myNumber not smallestNum Help from AI
