@@ -26,10 +26,11 @@ class Program
         theName = "Bob Smith";
         Resume resume1 = new Resume();
         resume1._userName = theName;
+        
         resume1._job.Add(job1);
         resume1._job.Add(job2);
         Console.WriteLine();
-        resume1.displayAllJobs();
+        resume1.DisplayAllJobs();
         Console.WriteLine();
         
 

@@ -1,18 +1,23 @@
+using System;
+
+
+
 public class Resume()
+
 {
     public string _userName;
     public List<Job> _job = new List<Job>();
     public Job myjob;
     private int count = 0;
 
-    
+
     public void Add(Job hold)
     {
-        _job[count]= hold;
+        _job[count] = hold;
         count = count + 1;
     }
 
-    public void displayAllJobs()
+    public void DisplayAllJobs()
     {
         Console.WriteLine($"Name: {_userName}");
         Console.WriteLine("Jobs:");
