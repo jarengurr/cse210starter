@@ -21,9 +21,9 @@ public class Entry()
 
     public void EnterTextOnly()
     {
-        Console.WriteLine("Enter Text here:>  ");
+        Console.WriteLine("Enter Text with no question here:>  ");
         _entryText = Console.ReadLine();
-        _promptText = "none";
+        _promptText = "No question";
         _date = DateTime.Now.ToString("DD/MM/YYYY");
 
     }
@@ -32,7 +32,7 @@ public class Entry()
         
         _promptText = myGenerator.GetRandomPrompt();
         Console.WriteLine(_promptText);
-        Console.WriteLine("Enter Text here:>  ");
+        Console.WriteLine("Enter Text to answer the question here:>  ");
         _entryText = Console.ReadLine();
        
         _date = DateTime.Now.ToString("DD/MM/YYYY");
