@@ -11,8 +11,7 @@ public class Entry()
 
     public void Display()
     {
-        _date = DateTime.Now.ToString("DD/MM/YYYY");
-
+       
         Console.WriteLine(_date);
         Console.WriteLine(_promptText);
         Console.WriteLine(_entryText);
@@ -23,6 +22,7 @@ public class Entry()
         Console.WriteLine("Enter Text with no question here:>  ");
         _entryText = Console.ReadLine();
         _promptText = "No question";
+
         _date = DateTime.Now.ToString("DD/MM/YYYY");
 
     }
