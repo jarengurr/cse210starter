@@ -11,8 +11,7 @@ public class Entry()
 
     public void Display()
     {
-        _date = "July 5 2025";
-
+        _date = DateTime.Now.ToString("DD/MM/YYYY");
 
         Console.WriteLine(_date);
         Console.WriteLine(_promptText);
