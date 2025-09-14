@@ -8,7 +8,7 @@ public class PromptGenerator()
     private int maxNum;// max number of questions or prompts in list
 
 
-    public void LoadQuestion(string question) //not sure what this is maybe adding questions
+    public void SaveQuestion(string question) // adding questions by user
     {
        string filename = "question.txt";
         using (StreamWriter holdfile = File.AppendText(filename))

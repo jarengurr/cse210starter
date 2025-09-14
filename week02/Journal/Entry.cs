@@ -7,11 +7,40 @@ public class Entry()
     string _promptText;
     string _entryText;
 
-     PromptGenerator myGenerator = new PromptGenerator();
+    PromptGenerator myGenerator = new PromptGenerator();
 
+    public string getDate()
+    {
+        return _date; 
+    }
+
+    public void setDate(string newDate)
+    {
+        _date = newDate;
+    }
+
+    public string getPrompt()
+    {
+        return _promptText;
+    }
+
+    public void setPrompt(string newPromptText)
+    {
+        _promptText = newPromptText;
+    }
+
+    public string getEntryText()
+    {
+        return _entryText;
+    }
+
+    public void setEntryText(string newEntryText)
+    {
+        _entryText = newEntryText;
+    }
     public void Display()
     {
-       
+
         Console.WriteLine(_date);
         Console.WriteLine(_promptText);
         Console.WriteLine(_entryText);
