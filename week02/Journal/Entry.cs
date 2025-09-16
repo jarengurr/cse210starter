@@ -1,5 +1,5 @@
 using System.Data.Common;
-using System.Net.Mail;
+
 
 public class Entry()
 {
@@ -52,7 +52,7 @@ public class Entry()
         _entryText = Console.ReadLine();
         _promptText = "No question";
 
-        _date = DateTime.Now.ToString("DD/MM/YYYY");
+        _date = DateTime.Now.ToString();
 
     }
      public void EnterTextPlusQuestion()
@@ -63,7 +63,7 @@ public class Entry()
         Console.WriteLine("Enter Text to answer the question here:>  ");
         _entryText = Console.ReadLine();
        
-        _date = DateTime.Now.ToString("DD/MM/YYYY");
+        _date = DateTime.Now.ToString();
 
     }
 

@@ -28,12 +28,12 @@ public class Journal
         {
             foreach ( Entry singleEntry in _entries)
             {
-                
+                Console.WriteLine(singleEntry.getEntryText());
                 outputfile.WriteLine($"{singleEntry.getDate}*{singleEntry.getPrompt}*{singleEntry.getEntryText}");
            }
         }
 
-       
+        
 
     }
 

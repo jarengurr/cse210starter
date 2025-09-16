@@ -7,7 +7,9 @@ class Program
     static void Main(string[] args)
     {
         int holdNum = 0;
+        string holdDate;
         Entry myWords = new Entry();
+        Journal myJournal = new Journal();
         PromptGenerator myGenerator = new PromptGenerator();
         
         
@@ -20,16 +22,17 @@ class Program
             Console.WriteLine("1. Write without a question");
             Console.WriteLine("2. Write with a question");
             Console.WriteLine("3. Write with a motivation");
-            Console.WriteLine("4. Display All");
+            Console.WriteLine("4. Display All Journal");
             Console.WriteLine("5. Display Last");
-            Console.WriteLine("6. Load Journal");
+            Console.WriteLine("6. Load Journal****check");
             Console.WriteLine("7. Save Journal entry");
             Console.WriteLine("8. Quit program");
+            Console.WriteLine("9. Save Journal");
             Console.Write("  ENTER HERE:> ");
             string inputNum = Console.ReadLine();
             bool isTrue = int.TryParse(inputNum, out holdNum);
             if (!isTrue)
-                holdNum = 9;
+                holdNum = 10;
 
             switch (holdNum)
             {
@@ -43,17 +46,27 @@ class Program
                     myGenerator.GetFile();
                     break;
                 case 4:
+                    myJournal.DisplayAll();
                     break;
                 case 5:
                     myWords.Display();
                     break;
                 case 6:
+                    holdDate = myWords.getDate();
+                    Console.WriteLine(holdDate);
+                    holdDate = myJournal._entries[0].getDate();
+                    Console.WriteLine(holdDate);
+
                     break;
                 case 7:
+                    myJournal.AddEntry(myWords);
                     break;
                 case 8:
                     break;
                 case 9:
+                    myJournal.SaveToFile();
+                    break;
+                case 10:
                     Console.WriteLine("Please enter a number between 1 and 8");
                     break;
             }
