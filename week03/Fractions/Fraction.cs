@@ -23,34 +23,38 @@ public class Fraction
 
 
 
-    public void GetTop()
+    public int GetTop()
     {
-
+        return _top;
     }
 
     public void SetTop(int top)
     {
-
+        _top = top;
     }
 
-    public void GetBottom()
+    public int GetBottom()
     {
-
+        return _bottom;
     }
 
     public void SetBottom(int bottom)
     {
-
+        _bottom = bottom;
     }
 
 
     public string GetFractionString()
     {
-        return "0";
+        string myFraction = _top + "/" + _bottom;
+        return myFraction;
     }
 
     public double GetDecimalValue()
     {
-        return 0;
+        double holdTop = Convert.ToDouble(_top);
+        double holdBottom = Convert.ToDouble(_bottom);
+        double hold = holdTop / holdBottom;
+        return hold;
     }
 }

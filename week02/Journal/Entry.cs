@@ -47,10 +47,10 @@ public class Entry()
 
     public void EnterTextOnly()
     {
-        
-         _entryText = Console.ReadLine();
-        _promptText = "No question";
-
+        Console.WriteLine("Enter Text to answer the question here:>  ");
+       
+        _entryText = Console.ReadLine();
+        _promptText = "No question";    
         _date = DateTime.Now.ToString();
 
     }

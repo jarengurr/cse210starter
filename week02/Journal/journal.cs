@@ -9,8 +9,8 @@ public class Journal
 
     public void AddEntry(Entry NewEntry)
     {
-        //_entries.Add(NewEntry);
-        _entries.Insert(_entries.Count, NewEntry);
+        _entries.Add(NewEntry);
+        //_entries.Insert(_entries.Count, NewEntry);
         
     }
 
@@ -23,15 +23,15 @@ public class Journal
             //Console.WriteLine(_entries[i]);
             i = i + 1;
             string hold;
-            singleEntry.Display();
+            singleEntry.Display(); //display entry
 
             Console.WriteLine(i); // used to count entries as displayed. will be deleted when method works
             Console.WriteLine();
             hold = _entries[0].getEntryText();
             Console.WriteLine(hold);
             hold = singleEntry.getEntryText();
-            Console.WriteLine(hold);
-
+            Console.WriteLine(_entries.Count);
+            
 
         }
     }
