@@ -1,5 +1,5 @@
 public class Fraction
-{
+{//Jaren Gurr
     private int _top;
     private int _bottom;
 
