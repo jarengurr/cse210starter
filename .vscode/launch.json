@@ -2,6 +2,8 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
+
 
         {
             "name": "Sandbox Project",
@@ -106,6 +108,20 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
+
+        {
+            "name": "Week 02: Test",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week02-Test",
+            "program": "${workspaceFolder}/week02/Journal/bin/Debug/net8.0/Test.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/week02/Test",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
 
         {
             "name": "Week 03: Fractions",

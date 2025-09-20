@@ -34,22 +34,21 @@ public class Entry()
         return _entryText;
     }
 
-    public void setEntryText(string newEntryText)
+
+        public void setEntryText(string newEntryText)
     {
         _entryText = newEntryText;
     }
     public void Display()
     {
+        Console.WriteLine($"{_date} The question: {_promptText} Entry Text: {_entryText}");
 
-        Console.WriteLine(_date);
-        Console.WriteLine(_promptText);
-        Console.WriteLine(_entryText);
     }
 
     public void EnterTextOnly()
     {
-        Console.WriteLine("Enter Text with no question here:>  ");
-        _entryText = Console.ReadLine();
+        
+         _entryText = Console.ReadLine();
         _promptText = "No question";
 
         _date = DateTime.Now.ToString();

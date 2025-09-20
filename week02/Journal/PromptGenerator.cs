@@ -5,7 +5,7 @@ using System.IO;
 public class PromptGenerator()
 {
     public List<string> _prompts = new List<string>();
-    private int maxNum;// max number of questions or prompts in list
+    private int maxNum =13;// max number of questions or prompts in list
 
 
     public void SaveQuestion(string question) // adding questions by user
@@ -26,7 +26,7 @@ public class PromptGenerator()
         string question;
         Random randomNumber = new Random();
         randNum = randomNumber.Next(1,maxNum);
-        question = _prompts[maxNum];
+        question = _prompts[randNum];
         return question;
         
     }
@@ -50,3 +50,4 @@ public class PromptGenerator()
 
 
 
+ 

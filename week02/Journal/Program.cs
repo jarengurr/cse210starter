@@ -11,7 +11,7 @@ class Program
         Entry myWords = new Entry();
         Journal myJournal = new Journal();
         PromptGenerator myGenerator = new PromptGenerator();
-        
+        myGenerator.GetFile();
         
 
 
@@ -27,10 +27,10 @@ class Program
             Console.WriteLine("6. Load Journal****check");
             Console.WriteLine("7. Save Journal entry");
             Console.WriteLine("8. Quit program");
-            Console.WriteLine("9. Save Journal");
+            Console.WriteLine("9. Save Journal***`");
             Console.Write("  ENTER HERE:> ");
             string inputNum = Console.ReadLine();
-            bool isTrue = int.TryParse(inputNum, out holdNum);
+            bool isTrue = int.TryParse(inputNum, out holdNum); // check number
             if (!isTrue)
                 holdNum = 10;
 
@@ -52,6 +52,7 @@ class Program
                     myWords.Display();
                     break;
                 case 6:
+                    myJournal.LoadFromFile("Journal.txt");
                     holdDate = myWords.getDate();
                     Console.WriteLine(holdDate);
                     holdDate = myJournal._entries[0].getDate();
@@ -64,7 +65,7 @@ class Program
                 case 8:
                     break;
                 case 9:
-                    myJournal.SaveToFile();
+                    myJournal.SaveToFile("Journal.txt");
                     break;
                 case 10:
                     Console.WriteLine("Please enter a number between 1 and 8");
