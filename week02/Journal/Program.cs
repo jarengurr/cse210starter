@@ -2,38 +2,41 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO.Enumeration;
-
+// added a checker to check input for menu and give a response if entered a wrong number or letter.
+// added a statement when program is exited to remind the user of the importantance of a journal
+// added the ability to make a journal entry without a question. In case the user feels they need to say something
+// added the time to the date in the entry
 class Program
 {
     static void Main(string[] args)
     {
         int holdNum = 0;
-        string holdDate;
+        //string 
         string holdQuestion;
         string fileName;
-        
-        
-        Journal myJournal = new Journal();
-        Entry myWords = new Entry();
+
+
+        Journal myJournal = new Journal(); // main journal
+        Entry myWords = new Entry(); // main entry
         PromptGenerator myGenerator = new PromptGenerator();
         myGenerator.GetFile();// load questions
 
-        
-       
-        
 
-        
-        while (holdNum !=8)
+
+
+
+
+        while (holdNum != 8)
         {
             {
-        }
+            }
             Console.WriteLine();
             Console.WriteLine("Please select one of the choices:  ");
             Console.WriteLine("1. Write without a question");
             Console.WriteLine("2. Write with a question");
             Console.WriteLine("3. Display All Journal");
             Console.WriteLine("4. Display Last");
-            Console.WriteLine("5. Load Journal from hard drive****check");
+            Console.WriteLine("5. Load Journal from hard drive");
             Console.WriteLine("6. Save Journal entry");
             Console.WriteLine("7. Save Journal to hard drive");
             Console.WriteLine("8. Quit program");
@@ -59,37 +62,39 @@ class Program
                     myWords.Display();
                     break;
                 case 5:
-                    myJournal.LoadFromFile("Journal.txt");
-                    holdDate = myWords.getDate();
-                    Console.WriteLine(holdDate);
-                    holdDate = myJournal._entries[0].getDate();
-                    Console.WriteLine(holdDate);
-
+                    Console.WriteLine();
+                    Console.WriteLine("Please enter file name like Journal.txt");
+                    fileName = Console.ReadLine();
+                    myJournal.LoadFromFile(fileName);
+                   
                     break;
                 case 6:
-                    
-                    Entry myWords2 = new Entry();
+
+                    Entry myWords2 = new Entry(); // second entry just to add to journal then set to null
                     myWords2.setDate(myWords.getDate());
                     myWords2.setEntryText(myWords.getEntryText());
                     myWords2.setPrompt(myWords.getPrompt());
                     Entry holdEntry;
                     holdEntry = myWords;
-                    //myJournal.AddEntry(holdEntry);
                     myJournal.AddEntry(myWords2);
                     myWords2 = null;
-                    //myWords = null;
-                    
+
+
                     break;
                 case 7:
-
+                    Console.WriteLine();
                     Console.WriteLine("Please enter file name like Journal.txt");
                     fileName = Console.ReadLine();
                     myJournal.SaveToFile(fileName);
                     break;
                 case 8:
-                    Console.WriteLine("Good By");
+                    Console.WriteLine();
+                    Console.WriteLine("Every person should keep a journal and every person can keep a journal.");
+                    Console.WriteLine("It should be an enlightening one and should bring great blessings and happiness to the families.");
+                    Console.WriteLine("                                           President Spencer W. Kimball");
+                    Console.WriteLine();
                     break;
-                case 10:
+                default:
                     Console.WriteLine("Please enter a number between 1 and 8");
                     break;
             }
@@ -102,8 +107,8 @@ class Program
 
 
         }
-        
-            
+
+
 
     }
 }

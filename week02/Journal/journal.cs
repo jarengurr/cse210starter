@@ -35,7 +35,7 @@ public class Journal
     public void SaveToFile(string filepath)
     {
         
-        using (StreamWriter outputfile = new StreamWriter(filepath, true))
+        using (StreamWriter outputfile = new StreamWriter(filepath, false))
         {
             foreach (Entry singleEntry in _entries)
             {
@@ -50,24 +50,26 @@ public class Journal
 
     }
 
-    public void LoadFromFile(string File)
+    public void LoadFromFile(string fileName)
     {
-        Entry aEntry;//create new enty item to fill
-        aEntry = new Entry();
+        
 
-        string filename = "Journal.txt";
-        string[] Lines = System.IO.File.ReadAllLines(filename);
+        //string filename = "Journal.txt";
+        string[] Lines = System.IO.File.ReadAllLines(fileName);
        
         foreach (string line in Lines)// 
         {
             if (line != "")
             {
+                Entry aEntry;//create new enty item to fill
+                aEntry = new Entry();
                 string[] parts = line.Split("*");
                 aEntry.setDate(parts[0]);
                 aEntry.setPrompt(parts[1]);
                 aEntry.setEntryText(parts[2]);
 
                 _entries.Add(aEntry);// add each entry to journal
+                aEntry = null;
             }
         }
     }
