@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO.Enumeration;
 
 class Program
 {
@@ -8,26 +9,34 @@ class Program
     {
         int holdNum = 0;
         string holdDate;
-        Entry myWords = new Entry();
+        string holdQuestion;
+        string fileName;
+        
+        
         Journal myJournal = new Journal();
+        Entry myWords = new Entry();
         PromptGenerator myGenerator = new PromptGenerator();
-        myGenerator.GetFile();
+        myGenerator.GetFile();// load questions
+
+        
+       
         
 
-
-        while (holdNum != 8)
+        
+        while (holdNum !=8)
         {
+            {
+        }
             Console.WriteLine();
             Console.WriteLine("Please select one of the choices:  ");
             Console.WriteLine("1. Write without a question");
             Console.WriteLine("2. Write with a question");
-            Console.WriteLine("3. Write with a motivation");
-            Console.WriteLine("4. Display All Journal");
-            Console.WriteLine("5. Display Last");
-            Console.WriteLine("6. Load Journal****check");
-            Console.WriteLine("7. Save Journal entry");
+            Console.WriteLine("3. Display All Journal");
+            Console.WriteLine("4. Display Last");
+            Console.WriteLine("5. Load Journal from hard drive****check");
+            Console.WriteLine("6. Save Journal entry");
+            Console.WriteLine("7. Save Journal to hard drive");
             Console.WriteLine("8. Quit program");
-            Console.WriteLine("9. Save Journal***`");
             Console.Write("  ENTER HERE:> ");
             string inputNum = Console.ReadLine();
             bool isTrue = int.TryParse(inputNum, out holdNum); // check number
@@ -40,18 +49,16 @@ class Program
                     myWords.EnterTextOnly();
                     break;
                 case 2:
-                    myWords.EnterTextPlusQuestion();
+                    holdQuestion = myGenerator.GetRandomPrompt();
+                    myWords.EnterTextPlusQuestion(holdQuestion);
                     break;
                 case 3:
-                    myGenerator.GetFile();
-                    break;
-                case 4:
                     myJournal.DisplayAll();
                     break;
-                case 5:
+                case 4:
                     myWords.Display();
                     break;
-                case 6:
+                case 5:
                     myJournal.LoadFromFile("Journal.txt");
                     holdDate = myWords.getDate();
                     Console.WriteLine(holdDate);
@@ -59,13 +66,28 @@ class Program
                     Console.WriteLine(holdDate);
 
                     break;
+                case 6:
+                    
+                    Entry myWords2 = new Entry();
+                    myWords2.setDate(myWords.getDate());
+                    myWords2.setEntryText(myWords.getEntryText());
+                    myWords2.setPrompt(myWords.getPrompt());
+                    Entry holdEntry;
+                    holdEntry = myWords;
+                    //myJournal.AddEntry(holdEntry);
+                    myJournal.AddEntry(myWords2);
+                    myWords2 = null;
+                    //myWords = null;
+                    
+                    break;
                 case 7:
-                    myJournal.AddEntry(myWords);
+
+                    Console.WriteLine("Please enter file name like Journal.txt");
+                    fileName = Console.ReadLine();
+                    myJournal.SaveToFile(fileName);
                     break;
                 case 8:
-                    break;
-                case 9:
-                    myJournal.SaveToFile("Journal.txt");
+                    Console.WriteLine("Good By");
                     break;
                 case 10:
                     Console.WriteLine("Please enter a number between 1 and 8");

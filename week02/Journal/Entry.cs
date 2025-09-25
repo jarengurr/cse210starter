@@ -3,11 +3,11 @@ using System.Data.Common;
 
 public class Entry()
 {
-    string _date;
-    string _promptText;
-    string _entryText;
+    public string _date;
+    public string _promptText;
+    public string _entryText;
 
-    PromptGenerator myGenerator = new PromptGenerator();
+    //PromptGenerator myGenerator = new PromptGenerator();
 
     public string getDate()
     {
@@ -41,7 +41,7 @@ public class Entry()
     }
     public void Display()
     {
-        Console.WriteLine($"{_date} The question: {_promptText} Entry Text: {_entryText}");
+        Console.WriteLine($"{_date} THE QUESTION: {_promptText} ENTRY TEXT: {_entryText}");
 
     }
 
@@ -54,14 +54,13 @@ public class Entry()
         _date = DateTime.Now.ToString();
 
     }
-     public void EnterTextPlusQuestion()
+     public void EnterTextPlusQuestion(string promptText)
     {
-        
-        _promptText = myGenerator.GetRandomPrompt();
+        _promptText = promptText;
         Console.WriteLine(_promptText);
         Console.WriteLine("Enter Text to answer the question here:>  ");
         _entryText = Console.ReadLine();
-       
+      
         _date = DateTime.Now.ToString();
 
     }

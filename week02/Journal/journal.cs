@@ -22,15 +22,11 @@ public class Journal
         {
             //Console.WriteLine(_entries[i]);
             i = i + 1;
-            string hold;
+            
             singleEntry.Display(); //display entry
 
             Console.WriteLine(i); // used to count entries as displayed. will be deleted when method works
-            Console.WriteLine();
-            hold = _entries[0].getEntryText();
-            Console.WriteLine(hold);
-            hold = singleEntry.getEntryText();
-            Console.WriteLine(_entries.Count);
+           
             
 
         }
@@ -39,13 +35,14 @@ public class Journal
     public void SaveToFile(string filepath)
     {
         
-        using (StreamWriter outputfile = new StreamWriter(filepath, false))
+        using (StreamWriter outputfile = new StreamWriter(filepath, true))
         {
             foreach (Entry singleEntry in _entries)
             {
                 Console.WriteLine(singleEntry.getEntryText());
                 Console.WriteLine(_entries.Count);
-                outputfile.WriteLine($"{singleEntry.getDate}*{singleEntry.getPrompt}*{singleEntry.getEntryText}");
+                outputfile.WriteLine($"{singleEntry.getDate()}*{singleEntry.getPrompt()}*{singleEntry.getEntryText()}");
+                //outputfile.WriteLine(singleEntry.getEntryText())
             }
         }
 
