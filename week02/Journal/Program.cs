@@ -70,19 +70,7 @@ class Program
                     myJournal.LoadFromFile(fileName);
 
                     break;
-                case 6:
-
-                    Entry myWords2 = new Entry(); // second entry just to add to journal then set to null
-                    myWords2.SetDate(myWords.GetDate());
-                    myWords2.SetEntryText(myWords.GetEntryText());
-                    myWords2.SetPrompt(myWords.GetPrompt());
-                    //Entry holdEntry;
-                    //holdEntry = myWords;
-                    myJournal.AddEntry(myWords2);
-                    myWords2 = null;
-
-
-                    break;
+                
                 case 7:
                     Console.WriteLine();
                     Console.WriteLine("Please enter file name like Journal.txt");
@@ -97,7 +85,7 @@ class Program
                     Console.WriteLine();
                     break;
                 default:
-                    Console.WriteLine("Please enter a number between 1 and 8");
+                    Console.WriteLine("Please enter a number between 1 and 5 or 7 to 8");
                     break;
             }
 
