@@ -10,15 +10,26 @@ public class Scripture
 
         string[] myWords = scriptText.Split(" ");
         Console.WriteLine(myWords[0]);
-        Console.WriteLine(myWords[1]);
-        Console.WriteLine(myWords[2]);
+       
+        foreach (string singleWord in myWords)// 
+        {
+            if (singleWord != "")
+            {
+                Word aWord;//create new enty item to fill
+                aWord = new Word(singleWord);
+                _words.Add(aWord);// add each entry to journal
+                aWord = null;
+            }
+        }
+        Console.WriteLine(_words[10].GetDisplayText());
+        Console.WriteLine(myWords[0]);
     }
     public void HideRandomWords(int numberToHide)
     {
-
+        
     }
 
-    public string GetDisplayText()
+    public string GetDisplayText()//some words visible some not visible
     {
         return "25";
     }

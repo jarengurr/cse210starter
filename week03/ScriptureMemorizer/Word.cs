@@ -13,21 +13,26 @@ public class Word
 
     public void Hide()
     {
-
+        _isHidden = true;
     }
 
     public void Show()
     {
-
+        _isHidden = false;
     }
 
     public bool IsHidden()
     {
-        return true;
+        return _isHidden;
     }
 
     public string GetDisplayText()
     {
-        return "";
+        if (IsHidden())
+            return "****";
+        else
+            return _text;
+
+        
     }
 }
