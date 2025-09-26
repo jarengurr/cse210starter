@@ -45,23 +45,38 @@ public class Entry()
 
     }
 
-    public void EnterTextOnly()
+    public void EnterTextOnly(Journal myJournal)
     {
         Console.WriteLine("Enter Text to answer the question here:>  ");
-       
+
         _entryText = Console.ReadLine();
-        _promptText = "No question";    
+        _promptText = "No question";
         _date = DateTime.Now.ToString();
+        Entry myWords2 = new Entry(); // second entry just to add to journal then set to null
+        myWords2.SetDate(_date);
+        myWords2.SetEntryText(_entryText);
+        myWords2.SetPrompt(_promptText);
+        myJournal.AddEntry(myWords2);
+        myWords2 = null;
+
 
     }
-     public void EnterTextPlusQuestion(string promptText)
+    public void EnterTextPlusQuestion(string promptText, Journal myJournal)
     {
         _promptText = promptText;
         Console.WriteLine(_promptText);
         Console.WriteLine("Enter Text to answer the question here:>  ");
         _entryText = Console.ReadLine();
-      
+
         _date = DateTime.Now.ToString();
+        
+         Entry myWords2 = new Entry(); // second entry just to add to journal then set to null
+        myWords2.SetDate(_date);
+        myWords2.SetEntryText(_entryText);
+        myWords2.SetPrompt(_promptText);
+        myJournal.AddEntry(myWords2);
+        myWords2 = null;
+
 
     }
 

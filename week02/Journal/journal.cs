@@ -16,16 +16,16 @@ public class Journal
 
     public void DisplayAll()
     {
-        int i = 0;
+        //int i = 0;
 
         foreach (Entry singleEntry in _entries)
         {
             //Console.WriteLine(_entries[i]);
-            i = i + 1;
+            //i = i + 1;
             
             singleEntry.Display(); //display entry
 
-            Console.WriteLine(i); // used to count entries as displayed. will be deleted when method works
+            //Console.WriteLine(i); // used to count entries as displayed. will be deleted when method works
            
             
 

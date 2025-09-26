@@ -8,6 +8,7 @@ using System.IO.Enumeration;
 // user remember to think of the journal and write in the journal.
 // added the ability to make a journal entry without a question. In case the user feels they need to say something
 // added the time to the date in the entry
+// added display last entry
 class Program
 {
     static void Main(string[] args)
@@ -39,7 +40,6 @@ class Program
             Console.WriteLine("3. Display All Journal Entries");
             Console.WriteLine("4. Display Last Entry");
             Console.WriteLine("5. Load Journal from hard drive");
-            Console.WriteLine("6. Save Journal entry");
             Console.WriteLine("7. Save Journal to hard drive");
             Console.WriteLine("8. Quit program");
             Console.Write("  ENTER HERE:> ");
@@ -51,11 +51,11 @@ class Program
             switch (holdNum)
             {
                 case 1:
-                    myWords.EnterTextOnly();
+                    myWords.EnterTextOnly(myJournal);
                     break;
                 case 2:
                     holdQuestion = myGenerator.GetRandomPrompt();
-                    myWords.EnterTextPlusQuestion(holdQuestion);
+                    myWords.EnterTextPlusQuestion(holdQuestion, myJournal);
                     break;
                 case 3:
                     myJournal.DisplayAll();
@@ -76,8 +76,8 @@ class Program
                     myWords2.SetDate(myWords.GetDate());
                     myWords2.SetEntryText(myWords.GetEntryText());
                     myWords2.SetPrompt(myWords.GetPrompt());
-                    Entry holdEntry;
-                    holdEntry = myWords;
+                    //Entry holdEntry;
+                    //holdEntry = myWords;
                     myJournal.AddEntry(myWords2);
                     myWords2 = null;
 
