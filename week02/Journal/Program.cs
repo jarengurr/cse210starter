@@ -37,7 +37,7 @@ class Program
             Console.WriteLine("1. Write without a question");
             Console.WriteLine("2. Write with a question");
             Console.WriteLine("3. Display All Journal Entries");
-            Console.WriteLine("4. Display Last");
+            Console.WriteLine("4. Display Last Entry");
             Console.WriteLine("5. Load Journal from hard drive");
             Console.WriteLine("6. Save Journal entry");
             Console.WriteLine("7. Save Journal to hard drive");
