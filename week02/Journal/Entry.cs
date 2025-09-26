@@ -9,33 +9,33 @@ public class Entry()
 
     //PromptGenerator myGenerator = new PromptGenerator();
 
-    public string getDate()
+    public string GetDate()
     {
         return _date; 
     }
 
-    public void setDate(string newDate)
+    public void SetDate(string newDate)
     {
         _date = newDate;
     }
 
-    public string getPrompt()
+    public string GetPrompt()
     {
         return _promptText;
     }
 
-    public void setPrompt(string newPromptText)
+    public void SetPrompt(string newPromptText)
     {
         _promptText = newPromptText;
     }
 
-    public string getEntryText()
+    public string GetEntryText()
     {
         return _entryText;
     }
 
 
-        public void setEntryText(string newEntryText)
+        public void SetEntryText(string newEntryText)
     {
         _entryText = newEntryText;
     }

@@ -2,8 +2,10 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO.Enumeration;
+//                                  Exceeded requirements
 // added a checker to check input for menu and give a response if entered a wrong number or letter.
-// added a statement when program is exited to remind the user of the importantance of a journal
+// added a statement when program is exited to remind the user of the importantance of a journal which may help
+// user remember to think of the journal and write in the journal.
 // added the ability to make a journal entry without a question. In case the user feels they need to say something
 // added the time to the date in the entry
 class Program
@@ -34,7 +36,7 @@ class Program
             Console.WriteLine("Please select one of the choices:  ");
             Console.WriteLine("1. Write without a question");
             Console.WriteLine("2. Write with a question");
-            Console.WriteLine("3. Display All Journal");
+            Console.WriteLine("3. Display All Journal Entries");
             Console.WriteLine("4. Display Last");
             Console.WriteLine("5. Load Journal from hard drive");
             Console.WriteLine("6. Save Journal entry");
@@ -66,14 +68,14 @@ class Program
                     Console.WriteLine("Please enter file name like Journal.txt");
                     fileName = Console.ReadLine();
                     myJournal.LoadFromFile(fileName);
-                   
+
                     break;
                 case 6:
 
                     Entry myWords2 = new Entry(); // second entry just to add to journal then set to null
-                    myWords2.setDate(myWords.getDate());
-                    myWords2.setEntryText(myWords.getEntryText());
-                    myWords2.setPrompt(myWords.getPrompt());
+                    myWords2.SetDate(myWords.GetDate());
+                    myWords2.SetEntryText(myWords.GetEntryText());
+                    myWords2.SetPrompt(myWords.GetPrompt());
                     Entry holdEntry;
                     holdEntry = myWords;
                     myJournal.AddEntry(myWords2);

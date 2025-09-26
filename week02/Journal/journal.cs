@@ -39,9 +39,9 @@ public class Journal
         {
             foreach (Entry singleEntry in _entries)
             {
-                Console.WriteLine(singleEntry.getEntryText());
+                Console.WriteLine(singleEntry.GetEntryText());
                 Console.WriteLine(_entries.Count);
-                outputfile.WriteLine($"{singleEntry.getDate()}*{singleEntry.getPrompt()}*{singleEntry.getEntryText()}");
+                outputfile.WriteLine($"{singleEntry.GetDate()}*{singleEntry.GetPrompt()}*{singleEntry.GetEntryText()}");
                 //outputfile.WriteLine(singleEntry.getEntryText())
             }
         }
@@ -56,7 +56,7 @@ public class Journal
 
         //string filename = "Journal.txt";
         string[] Lines = System.IO.File.ReadAllLines(fileName);
-       
+        _entries.Clear();
         foreach (string line in Lines)// 
         {
             if (line != "")
@@ -64,9 +64,9 @@ public class Journal
                 Entry aEntry;//create new enty item to fill
                 aEntry = new Entry();
                 string[] parts = line.Split("*");
-                aEntry.setDate(parts[0]);
-                aEntry.setPrompt(parts[1]);
-                aEntry.setEntryText(parts[2]);
+                aEntry.SetDate(parts[0]);
+                aEntry.SetPrompt(parts[1]);
+                aEntry.SetEntryText(parts[2]);
 
                 _entries.Add(aEntry);// add each entry to journal
                 aEntry = null;
