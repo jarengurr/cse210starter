@@ -2,6 +2,7 @@ public class Reference
 { // possible getters and setters
 
     string _book;
+    
     int _chapter;
     int _verse;
     int _endVerse;
@@ -51,4 +52,6 @@ public class Reference
     {
         return _endVerse;
     }
+
+   
 }
