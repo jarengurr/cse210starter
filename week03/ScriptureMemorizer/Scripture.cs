@@ -9,7 +9,7 @@ public class Scripture
 
 
         string[] myWords = scriptText.Split(" ");
-        Console.WriteLine(myWords[0]);
+        //Console.WriteLine(myWords[0]);
        
         foreach (string singleWord in myWords)// 
         {
@@ -21,21 +21,51 @@ public class Scripture
                 aWord = null;
             }
         }
-        Console.WriteLine(_words[10].GetDisplayText());
-        Console.WriteLine(myWords[0]);
+        //Console.WriteLine(_words[10].GetDisplayText());
+        //Console.WriteLine(myWords[0]);
     }
     public void HideRandomWords(int numberToHide)
     {
-        
+        int holdNum;
+        Random randomNum = new Random();
+        //for (int i = 0; i < (numberToHide); i++)
+        //{
+        //    holdNum = randomNum.Next(0, _words.Count + 1);
+        //    _words[holdNum].Hide();// will set hidden to true
+        //    Console.WriteLine(holdNum);
+        //    Console.WriteLine(_words.Count);
+        //}
+        int i = 0;
+        while (i < numberToHide)
+        {
+            holdNum = randomNum.Next(0, _words.Count);
+            if (!_words[holdNum].IsHidden())
+            {
+                _words[holdNum].Hide();// will set hidden to true
+                i = i + 1;
+            }
+                
+            
+
+        }
     }
 
     public string GetDisplayText()//some words visible some not visible
     {
-        return "25";
+        string holdScripture = "";
+        for (int i = 0; i < _words.Count; i++)
+        {
+            holdScripture = holdScripture + " " + _words[i].GetDisplayText();
+        }
+        return holdScripture;
     }
 
     public bool IsCompletelyHidden()
     {
+        for (int i = 0; i < (_words.Count); i++)
+        {//check each word and see if it is hidden
+
+        }
         return true;
     }
 }
