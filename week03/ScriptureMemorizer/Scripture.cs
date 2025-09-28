@@ -2,12 +2,12 @@ public class Scripture
 {
     Reference _reference;
     List<Word> _words = new List<Word>();
-    bool _allHidden;
+    
 
 
     public Scripture(Reference myRef, string scriptText)
     {
-        _allHidden = false;
+       
         _reference = myRef;
         string[] myWords = scriptText.Split(" ");
         //Console.WriteLine(myWords[0]);
@@ -71,7 +71,7 @@ public class Scripture
         {//check each word and see if it is hidden
             if (_words[i].IsHidden())
             {
-                holdHidCount = holdHidCount = 1;
+                holdHidCount = holdHidCount + 1;
             }
         }
 

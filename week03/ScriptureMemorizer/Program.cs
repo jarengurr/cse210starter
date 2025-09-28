@@ -31,7 +31,7 @@ class Program
             if (aScripture.IsCompletelyHidden())
             {
                 answer = "quit";
-                Console.WriteLine("Finished");
+                Console.WriteLine("Finished. Good Job");
             }
             else
                 answer = Console.ReadLine();
