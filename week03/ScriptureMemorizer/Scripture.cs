@@ -2,15 +2,16 @@ public class Scripture
 {
     Reference _reference;
     List<Word> _words = new List<Word>();
+    bool _allHidden;
 
 
     public Scripture(Reference myRef, string scriptText)
     {
-
+        _allHidden = false;
         _reference = myRef;
         string[] myWords = scriptText.Split(" ");
         //Console.WriteLine(myWords[0]);
-       
+
         foreach (string singleWord in myWords)// 
         {
             if (singleWord != "")
@@ -45,7 +46,10 @@ public class Scripture
                 i = i + 1;
             }
                 
-            
+            if (IsCompletelyHidden())
+            {
+                i = 3;
+            }
 
         }
     }
