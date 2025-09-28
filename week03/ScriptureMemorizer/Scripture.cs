@@ -7,7 +7,7 @@ public class Scripture
     public Scripture(Reference myRef, string scriptText)
     {
 
-
+        _reference = myRef;
         string[] myWords = scriptText.Split(" ");
         //Console.WriteLine(myWords[0]);
        
@@ -62,10 +62,18 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
+        int holdHidCount = 0;
         for (int i = 0; i < (_words.Count); i++)
         {//check each word and see if it is hidden
-
+            if (_words[i].IsHidden())
+            {
+                holdHidCount = holdHidCount = 1;
+            }
         }
-        return true;
+
+        if (holdHidCount == _words.Count)
+            return true;
+        else
+            return false;
     }
 }
