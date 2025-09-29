@@ -1,16 +1,17 @@
 public class Reference
 { // possible getters and setters
 
-    string _book;
+    private string _book;
     
-    int _chapter;
-    int _verse;
-    int _endVerse;
+    private int _chapter;
+    private int _verse;
+    private int _endVerse;
 
 
 
     public string GetDisplayText()
     {
+        Console.Write($" {_book} {_chapter}:{_verse  }");
         return "yy";
     }
     public void SetBook(string theBook)

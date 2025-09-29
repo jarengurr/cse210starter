@@ -6,18 +6,25 @@ class Program
 
     static void Main(string[] args)
     {
+        string theScripture2 = " The fear of the Lord is the beginning of knowledge: but fools despise wisdom and instruction. My son, hear the instruction of thy father, and forsake not the law of thy mother";
         string theScripture = " Wherefore, I write unto my people, unto all those that shall receive hereafter these things which I write, that they may know the judgments of God, that they come upon all nations, according to the word which he hath spoken.";
         Reference theRef = new Reference();
         theRef.SetBook("2nd Nephi");
         theRef.SetChapter(25);
         theRef.SetVerse(3);
-        //theRef.SetEndVerse(3);
+        theRef.SetEndVerse(3);
+
+        Reference theRef2 = new Reference();
+        theRef.SetBook("2nd Nephi");
+        theRef.SetChapter(25);
+        theRef.SetVerse(3);
+        theRef.SetEndVerse(3);
 
 
         string answer=" ";
         string fullScripture;
         Scripture aScripture = new Scripture(theRef, theScripture);
-         Console.Clear();
+        Console.Clear();
         Console.Write($" {theRef.GetBook()} {theRef.GetChapter()}:{theRef.GetVerse()   }");
        
         //aScripture.HideRandomWords(3);

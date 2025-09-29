@@ -29,7 +29,18 @@ public class Word
     public string GetDisplayText()
     {
         if (IsHidden())
-            return "****";
+        {
+            string newWord = "";
+            int holdWordCount = _text.Length;
+            int i;
+            for (i = 0; i < holdWordCount; i++)
+            {
+                newWord = newWord + "_";
+            }
+
+            return newWord;
+        }
+            
         else
             return _text;
 

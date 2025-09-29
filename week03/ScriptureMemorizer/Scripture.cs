@@ -1,11 +1,31 @@
 public class Scripture
 {
-    Reference _reference;
-    List<Word> _words = new List<Word>();
+    private Reference _reference;
+    private List<Word> _words = new List<Word>();
+    private bool _endVerse;
     
 
 
     public Scripture(Reference myRef, string scriptText)
+    {
+
+        _reference = myRef;
+        string[] myWords = scriptText.Split(" ");
+        //Console.WriteLine(myWords[0]);
+
+        foreach (string singleWord in myWords)// 
+        {
+            if (singleWord != "")
+            {
+                Word aWord;//create new enty item to fill
+                aWord = new Word(singleWord);
+                _words.Add(aWord);// add each entry to journal
+                aWord = null;
+            }
+        }
+    }
+    
+    public Scripture(Reference myRef, string scriptText, bool endVerse)
     {
        
         _reference = myRef;
@@ -22,8 +42,6 @@ public class Scripture
                 aWord = null;
             }
         }
-        //Console.WriteLine(_words[10].GetDisplayText());
-        //Console.WriteLine(myWords[0]);
     }
     public void HideRandomWords(int numberToHide)
     {
@@ -45,7 +63,7 @@ public class Scripture
                 _words[holdNum].Hide();// will set hidden to true
                 i = i + 1;
             }
-                
+
             if (IsCompletelyHidden())
             {
                 i = 3;
