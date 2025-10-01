@@ -2,7 +2,7 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words = new List<Word>();
-    private bool _endVerse;
+    
     
 
 
@@ -47,13 +47,7 @@ public class Scripture
     {
         int holdNum;
         Random randomNum = new Random();
-        //for (int i = 0; i < (numberToHide); i++)
-        //{
-        //    holdNum = randomNum.Next(0, _words.Count + 1);
-        //    _words[holdNum].Hide();// will set hidden to true
-        //    Console.WriteLine(holdNum);
-        //    Console.WriteLine(_words.Count);
-        //}
+        
         int i = 0;
         while (i < numberToHide)
         {

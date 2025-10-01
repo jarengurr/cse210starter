@@ -8,11 +8,33 @@ public class Reference
     private int _endVerse;
 
 
-
-    public string GetDisplayText()
+    public Reference(String book, int chapter, int verse)
     {
-        Console.Write($" {_book} {_chapter}:{_verse  }");
-        return "yy";
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+    }
+
+    public Reference(String book, int chapter, int verse, int endVerse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = endVerse;
+    }
+    public string GetDisplayText()//to go into scripture constructor
+    {
+        if (_endVerse == 0)
+        {
+            string myString = $" {_book} {_chapter}:{_verse}";
+            return myString;
+        }
+        else
+        {
+            string myString = $" {_book} {_chapter}:{_verse}-{_endVerse}";
+            return myString;
+        }
+            
     }
     public void SetBook(string theBook)
     {
