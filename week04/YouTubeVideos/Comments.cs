@@ -10,7 +10,12 @@ public class Comments
         _text = text;
     }
 
-    
+    public string GetComments()
+    {
+        string holdString = $" {_text}  by  {_person}";
+        return holdString;
+    }
 
-    
+
+
 }
