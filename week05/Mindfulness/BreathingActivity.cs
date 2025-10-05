@@ -8,8 +8,8 @@ public class BreathingActivity : Activity
     public BreathingActivity()
     {
         //SetDesc(_desc);
-        //base.SetName(name) =
-        base.SetDesc("This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing");
+         base.SetName("Breathing Activity");
+         base.SetDesc("This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing");
         //SetDuration(seconds);
         
         
@@ -30,6 +30,7 @@ public class BreathingActivity : Activity
         //Console.Beep(500, 1500);
         //Console.Beep();      
         //hold.DisplayStartingMessage();
+        base.SetDuration(holdTime);
        
         Console.CursorVisible = false; // make cursor invisible
         int holdLoopNum = holdTime/ 10; ///////////////////////use seconds or _duration
@@ -39,11 +40,8 @@ public class BreathingActivity : Activity
             for (int i = 4; i > 0; i--)
             {
 
-
-                Console.Write(i);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
-
+                ShowCountDown(i);
+                
             }
             Console.WriteLine();
             Console.Write("Breathe out... ");
@@ -51,17 +49,15 @@ public class BreathingActivity : Activity
             for (int z = 6; z > 0; z--)
             {
 
-                Console.Write(z);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
+                ShowCountDown(z);
             }
 
             Console.WriteLine();
         }
          Console.CursorVisible = true;// make cursor visible
 
-       
-       
+
+        DisplayEndingMessage();
 
     }
 

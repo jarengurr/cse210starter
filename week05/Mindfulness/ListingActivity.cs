@@ -9,6 +9,8 @@ public class ListingActivity : Activity
     public ListingActivity()
     {
         base.SetDesc("This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing");
+        base.SetName("Listing Activity");
+         
     }
     public string GetRandomPrompt()
     {

@@ -12,6 +12,8 @@ public class ReflectingActivity : Activity
     public ReflectingActivity()
     {
         base.SetDesc("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you relize the power you have to effect other aspect of your life");
+        base.SetName("Reflecting Activity");
+         
     }
     public string GetRandomPrompt()
     {

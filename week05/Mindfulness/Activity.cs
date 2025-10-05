@@ -22,7 +22,10 @@ public class Activity
 
     public void DisplayEndingMessage()
     {
-
+        string endMsg = "YOu have done a good job.";
+        Console.WriteLine(endMsg);
+        ShowSpinner(3);//Thread.Sleep(3000);
+        Console.WriteLine($" You have completed the {_name} in {_duration} seconds");
     }
 
     public void ShowSpinner(int seconds)
@@ -42,11 +45,11 @@ public class Activity
         //    Console.Write(s);
         //    Thread.Sleep(1000);
         //    Console.Write("\b \b");
-//
+        Console.CursorVisible = false;// make cursor invisible
         //}
         int i = 0;
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(10);
+        DateTime endTime = startTime.AddSeconds(seconds);
         while (DateTime.Now < endTime)
         {
             // Console.Write(".");
@@ -61,11 +64,15 @@ public class Activity
                 i = 0;
             }
         }
+        Console.CursorVisible = true;// make cursor visible
     }
 
     public void ShowCountDown(int seconds)
     {
-       
+       Console.Write(seconds);
+       Thread.Sleep(1000);
+       Console.Write("\b \b");
+
     }
     protected void SetDesc(string desc)
     {
