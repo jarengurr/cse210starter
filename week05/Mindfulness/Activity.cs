@@ -69,14 +69,34 @@ public class Activity
 
     public void ShowCountDown(int seconds)
     {
+         string holdSpace;
          for (int i = seconds; i > 0; i--)
-            {
+        {
 
-                Console.Write(i);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
+            
+            Console.Write(i);
+            Thread.Sleep(1000);
+            if (seconds >= 0 & seconds < 10)// up to 99 seconds
+            {
+                holdSpace = "\b \b";
+                Console.Write(holdSpace);
                 
             }
+            else if (seconds > 9 & seconds < 100)
+            {
+                holdSpace = "\b\b  \b\b";
+                Console.Write(holdSpace);
+            }
+            else if (seconds > 99 & seconds < 1000)// for up to 999 seconds
+            {
+                holdSpace = "\b\b\b   \b\b\b";
+                Console.Write(holdSpace);
+            }
+            else // up to 9999 seconds
+                holdSpace = "\b\b\b\b    \b\b\b\b";
+            
+
+        }
        
 
     }

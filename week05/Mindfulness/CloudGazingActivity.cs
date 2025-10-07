@@ -26,9 +26,11 @@ public class CloudGazingActivity : Activity
         int holdTime = Convert.ToInt32(Console.ReadLine());
         base.SetDuration(holdTime * 60);
 
-        Console.WriteLine("You will be alerted when your session is done with sounds");
-        ShowSpinner(base.GetDuration());
-
+        Console.WriteLine("You will be alerted when your session is done with sounds. So, sit back and watch the clouds");
+        //ShowSpinner(base.GetDuration());
+        Console.CursorVisible = false;
+        ShowCountDown(GetDuration());
+        Console.CursorVisible = true;
         Console.Beep(500, 1500);
         Console.Beep();      
 
@@ -37,7 +39,7 @@ public class CloudGazingActivity : Activity
 
         DisplayEndingMessage();
 
-
+        ShowSpinner(5);
 
 
 

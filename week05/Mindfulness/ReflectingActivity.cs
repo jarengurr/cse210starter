@@ -3,8 +3,8 @@ using System.Dynamic;
 
 public class ReflectingActivity : Activity
 {
-    List<string> _prompts = new List<string>();
-    List<string> _questions = new List<string>();
+    private List<string> _prompts = new List<string>();
+    private List<string> _questions = new List<string>();
 
 
 
@@ -65,14 +65,14 @@ public class ReflectingActivity : Activity
         ShowCountDown(4);
         Console.WriteLine();
         Console.WriteLine();
-        
+
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(holdTime);
-        
+
         while (DateTime.Now < endTime)
         {
-            Console.CursorVisible = false;
-            Console.Write(GetRandomQuestion());
+            
+            DisplayQuestions(); //Console.Write(GetRandomQuestion());
             ShowSpinner(5);
             Console.WriteLine();
 
@@ -82,6 +82,7 @@ public class ReflectingActivity : Activity
 
 
         DisplayEndingMessage();
+        ShowSpinner(5);
 
     }
 
@@ -93,6 +94,9 @@ public class ReflectingActivity : Activity
     }
     public void DisplayQuestions()
     {
+        string holdQuestion;
+        holdQuestion = GetRandomQuestion();
+        Console.WriteLine(holdQuestion);
 
     }
     public void AddPrompt(string aPrompt)

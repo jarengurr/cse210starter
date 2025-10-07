@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 public class ListingActivity : Activity
 {
 
-    List<string> _questions = new List<string>();
+    private List<string> _questions = new List<string>();
 
     public ListingActivity()
     {
@@ -46,7 +46,7 @@ public class ListingActivity : Activity
         Console.WriteLine(holdPrompt);
         Console.Write("You may begin in: ");
         ShowCountDown(4);
-
+        Console.WriteLine();
         string holdNewLine;
         int J = 0;
         DateTime startTime = DateTime.Now;
@@ -60,10 +60,11 @@ public class ListingActivity : Activity
                 J = J + 1;
             }
         }
-        Console.WriteLine("Well done!");
-        
+        Console.WriteLine($"You listed {J} items!");
+        Console.WriteLine();
+        Console.WriteLine();
         DisplayEndingMessage();
-        
+        ShowSpinner(7);
 
     }
 
