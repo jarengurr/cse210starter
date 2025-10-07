@@ -5,6 +5,26 @@ public class Product
     private int _quantity;
 
 
+    public Product(string name, int price, int amount)
+    {
+        _name = name;
+        _pricePerUnit = price;
+        _quantity = amount;
+    }
 
+    public int GetPrice()
+    {
+        return _pricePerUnit;
+    }
+
+    public int GetQuantity()
+    {
+        return _quantity;
+    }
+
+    public string GetName()
+    {
+        return _name;
+    }
 
 }
