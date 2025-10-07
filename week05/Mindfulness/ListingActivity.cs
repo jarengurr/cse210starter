@@ -14,7 +14,12 @@ public class ListingActivity : Activity
     }
     public string GetRandomPrompt()
     {
-        return "";
+        int randNum;
+        int maxNum;
+        maxNum = _questions.Count;
+        Random randomNumber = new Random();
+        randNum = randomNumber.Next(0,maxNum);
+        return _questions[randNum];
     }
 
     public List<string> GetListFromUser(List<string> holdList)
@@ -31,6 +36,35 @@ public class ListingActivity : Activity
         base.DisplayStartingMessage();
         Console.WriteLine();
         Console.WriteLine();
+        Console.WriteLine(" How long, in seconds, would you like for your session? ");
+        int holdTime = Convert.ToInt32(Console.ReadLine());
+        base.SetDuration(holdTime);
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("List as many responses you can to the following prompt: ");
+        string holdPrompt = GetRandomPrompt();
+        Console.WriteLine(holdPrompt);
+        Console.Write("You may begin in: ");
+        ShowCountDown(4);
+
+        string holdNewLine;
+        int J = 0;
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(holdTime);
+
+        while (DateTime.Now < endTime)
+        {
+            holdNewLine = Console.ReadLine();
+            if (holdNewLine != "")
+            {
+                J = J + 1;
+            }
+        }
+        Console.WriteLine("Well done!");
+        
+        DisplayEndingMessage();
+        
+
     }
 
     public void AddQuestion(string theQuestion)

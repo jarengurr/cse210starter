@@ -37,20 +37,15 @@ public class BreathingActivity : Activity
         for (int m = 0; m < holdLoopNum; m++)
         {
             Console.Write("Breathe in...");
-            for (int i = 4; i > 0; i--)
-            {
 
-                ShowCountDown(i);
-                
-            }
+            ShowCountDown(4);
+
             Console.WriteLine();
             Console.Write("Breathe out... ");
 
-            for (int z = 6; z > 0; z--)
-            {
-
-                ShowCountDown(z);
-            }
+            
+            ShowCountDown(6);
+            
 
             Console.WriteLine();
         }

@@ -17,12 +17,23 @@ public class ReflectingActivity : Activity
     }
     public string GetRandomPrompt()
     {
-        return "";
+        int randNum;
+        int maxNum;
+        maxNum = _prompts.Count;
+        Random randomNumber = new Random();
+        randNum = randomNumber.Next(0,maxNum);
+
+        return _prompts[randNum];
     }
 
     public string GetRandomQuestion()
     {
-        return "";
+         int randNum;
+        int maxNum;
+        maxNum = _prompts.Count;
+        Random randomNumber = new Random();
+        randNum = randomNumber.Next(0,maxNum);
+        return _questions[randNum];
     }
 
     public void Run()
@@ -35,22 +46,50 @@ public class ReflectingActivity : Activity
         base.DisplayStartingMessage();
         Console.WriteLine();
         Console.WriteLine();
-
+        Console.WriteLine(" How long, in seconds, would you like for your session? ");
+        int holdTime = Convert.ToInt32(Console.ReadLine());
+        base.SetDuration(holdTime);
         Console.WriteLine("Consider the following prompt: ");
         Console.WriteLine();
-        Console.WriteLine(GetRandomPrompt());
-        Console.WriteLine();
-        Console.WriteLine("When you have somjething in mind, press enter to contune. ");
-        Console.Read();
-        Console.WriteLine("Now ponder on each of the folling questions as they related to this experience.");
-        Console.WriteLine("You may begin in : ");
+        //Console.WriteLine(GetRandomPrompt());
+        Console.CursorVisible = false;
+        DisplayPrompt();
 
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("When you have something in mind, press enter to contune. ");
+        Console.Read();
+        Console.WriteLine();
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience");
+        Console.Write("You may begin in:  ");
+        ShowCountDown(4);
+        Console.WriteLine();
+        Console.WriteLine();
+        
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(holdTime);
+        
+        while (DateTime.Now < endTime)
+        {
+            Console.CursorVisible = false;
+            Console.Write(GetRandomQuestion());
+            ShowSpinner(5);
+            Console.WriteLine();
+
+        }
+        Console.CursorVisible = true;// make cursor visible
+        Console.WriteLine();
+
+
+        DisplayEndingMessage();
 
     }
 
     public void DisplayPrompt()
     {
-
+        string holdPrompt;
+        holdPrompt = GetRandomPrompt();
+        Console.WriteLine(holdPrompt);
     }
     public void DisplayQuestions()
     {

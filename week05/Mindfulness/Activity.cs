@@ -22,10 +22,10 @@ public class Activity
 
     public void DisplayEndingMessage()
     {
-        string endMsg = "YOu have done a good job.";
+        string endMsg = "You have done a good job.";
         Console.WriteLine(endMsg);
-        ShowSpinner(3);//Thread.Sleep(3000);
-        Console.WriteLine($" You have completed the {_name} in {_duration} seconds");
+        ShowSpinner(7);//Thread.Sleep(3000);
+        Console.WriteLine($"You have completed the {_name} in {_duration} seconds");
     }
 
     public void ShowSpinner(int seconds)
@@ -69,9 +69,15 @@ public class Activity
 
     public void ShowCountDown(int seconds)
     {
-       Console.Write(seconds);
-       Thread.Sleep(1000);
-       Console.Write("\b \b");
+         for (int i = seconds; i > 0; i--)
+            {
+
+                Console.Write(i);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+                
+            }
+       
 
     }
     protected void SetDesc(string desc)

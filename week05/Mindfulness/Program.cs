@@ -55,7 +55,7 @@ class Program
         BreathingActivity hold = new BreathingActivity();
         CloudGazingActivity holdCloud = new CloudGazingActivity();
 
-
+        string holdRead;
         
         while (holdNum != 5)
         {
@@ -69,10 +69,11 @@ class Program
             Console.WriteLine("4. Cloud Gazing Activity");
             Console.WriteLine("5. Quit program");
             Console.Write("  ENTER HERE:> ");
-            string inputNum = Console.ReadLine();
-            bool isTrue = int.TryParse(inputNum, out holdNum); // check number
-            if (!isTrue)
-                holdNum = 10;
+            holdRead = Console.ReadLine();
+            if (holdRead == "")
+                holdRead = Console.ReadLine();
+            holdNum = Convert.ToInt32(holdRead); // check number
+           
 
             switch (holdNum)
             {

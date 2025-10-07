@@ -22,6 +22,28 @@ public class CloudGazingActivity : Activity
         base.DisplayStartingMessage();
         Console.WriteLine();
         Console.WriteLine();
+        Console.WriteLine(" How long, in minutes, would you like for your session? ");
+        int holdTime = Convert.ToInt32(Console.ReadLine());
+        base.SetDuration(holdTime * 60);
+
+        Console.WriteLine("You will be alerted when your session is done with sounds");
+        ShowSpinner(base.GetDuration());
+
+        Console.Beep(500, 1500);
+        Console.Beep();      
+
+
+
+
+        DisplayEndingMessage();
+
+
+
+
+
+
+
+
     }
     
 
