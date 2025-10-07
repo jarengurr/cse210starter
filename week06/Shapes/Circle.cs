@@ -5,6 +5,11 @@ public class Circle : Shapes
     public override double GetArea()
     {
         double area = Math.PI * Math.Pow(_radius, 2);
-        return .5;
+        return area;
+    }
+
+    public void SetRadius(double radius)
+    {
+        _radius = radius;
     }
 }
