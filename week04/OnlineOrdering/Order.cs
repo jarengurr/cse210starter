@@ -15,7 +15,17 @@ public class Order
 
     public string PackLabel()
     {
-        return "";
+        string holdList = "";
+        //string holdSubList = "";
+
+
+        for (int i = 0; i < _myProduct.Count; i++)
+        {
+            //holdList = holdList + _myProduct[i].GetName();
+            //holdSubList = holdSubList + _myProduct[i].GetProductId();
+            holdList = holdList + $"{_myProduct[i].GetName()}  --  {_myProduct[i].GetProductId()}{Environment.NewLine}";
+        }
+        return holdList;
     }
 
     public string ShipLabel()
