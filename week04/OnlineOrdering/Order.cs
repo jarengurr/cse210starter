@@ -30,7 +30,9 @@ public class Order
 
     public string ShipLabel()
     {
-        return "";
+
+        string holdMainString = $"{_theCustomer.GetName()} {Environment.NewLine}" + _theCustomer.GetFullString();
+        return holdMainString;
     }
 
     public void AddProduct(Product newProduct)
@@ -41,7 +43,7 @@ public class Order
     public void AddCosts()
     {
 
-
+        _totalCost = 0;
 
         for (int i = 0; i < _myProduct.Count; i++)
         {
@@ -55,5 +57,30 @@ public class Order
     {
         _theCustomer = bestCustomer;
     }
+
+    public int GetTotalCost()
+    {
+        return _totalCost;
+    }
+
+    public void PrintTotalCost()
+    {
+        AddCosts();
+        bool usa;
+        int holdCost;
+        usa = _theCustomer.InUsa();
+        if (usa)
+        {
+            holdCost = _usa;
+        }
+        else
+            holdCost = _nonUsa;
+
+        int fullCost;
+        fullCost = _totalCost + holdCost;
+        Console.WriteLine($" The total cost plus shipping is ${fullCost}");
+        Console.WriteLine();
+    }
+
 
 }

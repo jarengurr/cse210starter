@@ -18,11 +18,7 @@ public class Address
 
     public string GetAllInfo()
     {
-        _street = "780 W. Capitan Street";
-        _city = "West Hamstring";
-        _state = "California";
-        _country = "USA";
-
+       
         string holdString;
         holdString = $"{_street} {Environment.NewLine}{_city} {_state} {_country}";
 

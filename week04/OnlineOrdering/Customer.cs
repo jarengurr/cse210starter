@@ -25,6 +25,9 @@ public class Customer
         return _name;
     }
 
-    
+    public string GetFullString()
+    {
+        return _address.GetAllInfo();
+    }
     
 }
