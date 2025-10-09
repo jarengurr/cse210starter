@@ -9,6 +9,7 @@ class Program
         Console.WriteLine();
 
 
+        List<Shapes> myList = new List<Shapes>();
 
 
 
@@ -34,5 +35,19 @@ class Program
         mySquare.SetSide(20);
         Console.WriteLine(mySquare.GetArea());
         Console.WriteLine(mySquare.GetColor());
+
+        myList.Add(myRect);
+        myList.Add(myCirc);
+        myList.Add(mySquare);
+        for (int i = 0; i < myList.Count; i++)
+        {
+            string holdColor;
+            double holdArea;
+
+            holdArea = myList[i].GetArea();
+            holdColor = myList[i].GetColor();
+            Console.WriteLine($"The color is {holdColor} and the area is {holdArea}");
+        }
+
     }
 }
