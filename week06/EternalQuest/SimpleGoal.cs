@@ -22,7 +22,7 @@ public class SimpleGoal : Goal
     public override string GetStringRepresentational()
     {
 
-        string fileString = $"Simple Goal|{base.GetShortName}|{base.GetDesc}|{base.GetPoints}";
+        string fileString = $"Simple Goal*{base.GetShortName()}*{base.GetDesc()}*{base.GetPoints()}";
         return fileString;
     }
 

@@ -1,6 +1,8 @@
+using Microsoft.VisualBasic;
+
 public class GoalManager
 {
-    List<Goal> myGoals = new List<Goal>();
+    List<Goal> _myGoals = new List<Goal>();
     int _score;
 
 
@@ -43,7 +45,7 @@ public class GoalManager
                     break;
                 case 2:
 
-                    ListGoalNames();
+                    ListGoalDetails();
                     break;
                 case 3:
                     SaveGoals();
@@ -79,17 +81,17 @@ public class GoalManager
 
     public void ListGoalNames()
     {
-        for (int i = 0; i< myGoals.Count; i++)
+        for (int i = 0; i< _myGoals.Count; i++)
         {
-            Console.WriteLine(myGoals[i].GetShortName());
+            Console.WriteLine(_myGoals[i].GetShortName());
         }
     }
 
     public void ListGoalDetails()
     {
-         for (int i = 0; i< myGoals.Count; i++)
+         for (int i = 0; i< _myGoals.Count; i++)
         {
-            Console.WriteLine(myGoals[i].GetDetailsString());
+            Console.WriteLine(_myGoals[i].GetDetailsString());
         }
     }
 
@@ -132,7 +134,7 @@ public class GoalManager
 
 
                 SimpleGoal myGoal = new SimpleGoal(holdName, holdDesc, holdPoints);
-                myGoals.Add(myGoal);
+                _myGoals.Add(myGoal);
                 myGoal = null;
 
                 break;
@@ -149,7 +151,7 @@ public class GoalManager
                 Console.WriteLine($"What is the bonus for completing your goal {holdBonusTimes} times?  ");
                 holdBonusPoints = Convert.ToInt32(Console.ReadLine());
                 CheckListGoal myGoal2 = new CheckListGoal(holdName, holdDesc, holdPoints, holdBonusTimes, holdBonusPoints, 0);
-                myGoals.Add(myGoal2);
+                _myGoals.Add(myGoal2);
                 myGoal2 = null;
 
                 break;
@@ -164,7 +166,7 @@ public class GoalManager
 
 
                 EternalGoal myGoal3 = new EternalGoal(holdName, holdDesc, holdPoints);
-                myGoals.Add(myGoal3);
+                _myGoals.Add(myGoal3);
                 myGoal3 = null;
 
                 break;
@@ -187,7 +189,14 @@ public class GoalManager
 
     public void SaveGoals()
     {
-
+        using (StreamWriter myFile = new StreamWriter("Info.txt",false))
+        {
+            foreach (Goal hold in _myGoals)
+            {
+                myFile.WriteLine(hold.GetStringRepresentational());
+            }
+                
+        }
     }
 
     public void LoadGoals()

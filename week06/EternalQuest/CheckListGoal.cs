@@ -37,8 +37,8 @@ public class CheckListGoal : Goal
 
     public override string GetStringRepresentational()
     {
-        string fileString = $"Simple Goal|{base.GetShortName}|{base.GetDesc}|{base.GetPoints}|{_amountCompleted}|{_target}|{_bonus}";
-        return "";
+        string fileString = $"Simple Goal|{base.GetShortName()}|{base.GetDesc()}|{base.GetPoints()}|{_amountCompleted}|{_target}|{_bonus}";
+        return fileString;
     }
 
 
