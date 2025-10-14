@@ -11,7 +11,8 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-
+        string holdPoints = GetPoints();
+        SetCompletePoints(Convert.ToInt32(holdPoints));     
     }
 
     public override bool IsComplete() // never complete count times done
@@ -23,7 +24,7 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentational()
     {
-        string fileString = $"Eternal Goal|{base.GetShortName()}|{base.GetDesc()}|{base.GetPoints()}";
+        string fileString = $"Eternal Goal*{base.GetShortName()}*|{base.GetDesc()}*{base.GetPoints()}*{base.GetCompletePoints()}";
         return fileString;
     }
 

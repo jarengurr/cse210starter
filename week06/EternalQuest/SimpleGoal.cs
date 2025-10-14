@@ -10,6 +10,9 @@ public class SimpleGoal : Goal
     }
     public override void RecordEvent()
     {
+        string holdPoints = GetPoints();
+        SetCompletePoints(Convert.ToInt32(holdPoints));
+        _isComplete = true;   
 
     }
 
@@ -22,7 +25,7 @@ public class SimpleGoal : Goal
     public override string GetStringRepresentational()
     {
 
-        string fileString = $"Simple Goal*{base.GetShortName()}*{base.GetDesc()}*{base.GetPoints()}";
+        string fileString = $"Simple Goal*{base.GetShortName()}*{base.GetDesc()}*{base.GetPoints()}*{base.GetCompletePoints()}";
         return fileString;
     }
 

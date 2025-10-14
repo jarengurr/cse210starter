@@ -1,8 +1,10 @@
 public class Goal
 {
-    string _shortName;
-    string _description;
-    string _points;
+    string _shortName; // short name of goal
+    string _description; // description of goal
+    string _points; // points per event
+    int _completePoints; // total of points per event or completion
+
 
 
     public Goal(string name, string description, string points)
@@ -10,6 +12,7 @@ public class Goal
         _shortName = name;
         _description = description;
         _points = points;
+        _completePoints = 0;
     }
 
 
@@ -25,9 +28,15 @@ public class Goal
 
     public virtual string GetDetailsString()
     {
+        string holdString;
+        if (IsComplete())
+            holdString = $"[X]  {_shortName}   {_description}";
+        else
+            holdString = $"[ ]  {_shortName}   {_description}";
+             
 
-        string holdString = $"[ ]  {_shortName}   {_description}";
-        return holdString;
+
+                return holdString;
     }
 
     public virtual string GetStringRepresentational()
@@ -45,11 +54,22 @@ public class Goal
     {
         return _description;
     }
-    
-     protected string GetPoints()
+
+    protected string GetPoints()
     {
         return "";
     }
+
+    protected int GetCompletePoints()
+    {
+        return _completePoints;
+    }
+    
+     protected void SetCompletePoints(int myPoints)
+    {
+        _completePoints = myPoints;
+    }
+
 
 
 

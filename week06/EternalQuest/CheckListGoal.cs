@@ -17,7 +17,14 @@ public class CheckListGoal : Goal
 
     public override void RecordEvent()
     {
-
+        int myBonus = 0;
+        _amountCompleted = _amountCompleted + 1;
+        string holdPoints = GetPoints();
+        int hold = Convert.ToInt32(holdPoints);
+        if (IsComplete())
+            hold = _bonus + myBonus;
+            
+        SetCompletePoints(hold);  
     }
 
     public override bool IsComplete() // complete when amountcompleteted = target
@@ -30,9 +37,18 @@ public class CheckListGoal : Goal
 
     public override string GetDetailsString()
     {
-        
-        string holdString = $"[ ] {base.GetShortName()} {base.GetDesc()}   {_amountCompleted} / {_target}";
-        return holdString;
+        string holdString;
+        if (_amountCompleted == _target)
+        {
+            holdString = $"[X] {base.GetShortName()} {base.GetDesc()}   {_amountCompleted} / {_target}";
+        }
+        else
+        {
+            holdString = $"[ ] {base.GetShortName()} {base.GetDesc()}   {_amountCompleted} / {_target}";
+             
+        }
+    
+          return holdString;
     }
 
     public override string GetStringRepresentational()
