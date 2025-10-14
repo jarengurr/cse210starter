@@ -57,7 +57,7 @@ public class Goal
 
     protected string GetPoints()
     {
-        return "";
+        return _points;
     }
 
     protected int GetCompletePoints()

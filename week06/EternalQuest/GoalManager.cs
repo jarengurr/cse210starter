@@ -184,7 +184,7 @@ public class GoalManager
 
     public void RecordEvent()
     {
-
+        ListGoalNames();
     }
 
     public void SaveGoals()
