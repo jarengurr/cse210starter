@@ -8,10 +8,10 @@ class Program
 
 
 
-
+       
         Running myRun = new Running();
         Swimming mySwim = new Swimming();
-        Cycling myCycle = new Cycling();
+        
       
       
       
