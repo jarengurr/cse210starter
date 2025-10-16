@@ -9,7 +9,11 @@ public class Swimming : Activity
 
     public override void GetSummary()
     {
+        Console.WriteLine();
+        Console.WriteLine();
         Console.WriteLine($"{GetDate()} Swimming({GetActLength()} min)-Distance {GetDistance()} miles, Speed {GetSpeed()} MPH, Pace: {GetPace()} min per mile");
+        Console.WriteLine();
+        Console.WriteLine();
     }
 
     public override double GetDistance()
