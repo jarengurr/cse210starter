@@ -1,7 +1,7 @@
 public class SimpleGoal : Goal
 {
 
-    bool _isComplete;
+    private bool _isComplete;
 
 
     public SimpleGoal(string name, string description, string points) : base (name, description, points)
@@ -10,8 +10,7 @@ public class SimpleGoal : Goal
     }
     public override void RecordEvent()
     {
-        string holdPoints = GetPoints();
-        SetCompletePoints(Convert.ToInt32(holdPoints));
+        Console.WriteLine("you finished a goal.");
         _isComplete = true;   
 
     }
@@ -25,11 +24,14 @@ public class SimpleGoal : Goal
     public override string GetStringRepresentational()
     {
 
-        string fileString = $"Simple Goal*{base.GetShortName()}*{base.GetDesc()}*{base.GetPoints()}*{base.GetCompletePoints()}";
+        string fileString = $"Simple Goal*{base.GetShortName()}*{base.GetDesc()}*{base.GetPoints()}*{_isComplete}";
         return fileString;
     }
 
-
+    public void SetIsComplete(bool setMe)
+    {
+        _isComplete = setMe;
+    }
 
 
 }

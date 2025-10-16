@@ -1,1 +1,3 @@
-Simple Goal*simple goal*main simple goal*100*0
+300
+Simple Goal*798797987979879*lkjlkjlkjlkjlkjlk*100*True
+Simple Goal*try again*really try again*200*True

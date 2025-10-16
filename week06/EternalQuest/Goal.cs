@@ -1,9 +1,9 @@
 public class Goal
 {
-    string _shortName; // short name of goal
-    string _description; // description of goal
-    string _points; // points per event
-    int _completePoints; // total of points per event or completion
+    private string _shortName; // short name of goal
+    private string _description; // description of goal
+    private string _points; // points per event
+    //int _completePoints; // total of points per event or completion
 
 
 
@@ -12,7 +12,7 @@ public class Goal
         _shortName = name;
         _description = description;
         _points = points;
-        _completePoints = 0;
+        //_completePoints = 0;
     }
 
 
@@ -55,22 +55,12 @@ public class Goal
         return _description;
     }
 
-    protected string GetPoints()
+    public string GetPoints()
     {
         return _points;
     }
 
-    protected int GetCompletePoints()
-    {
-        return _completePoints;
-    }
-    
-     protected void SetCompletePoints(int myPoints)
-    {
-        _completePoints = myPoints;
-    }
-
-
+   
 
 
 

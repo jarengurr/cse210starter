@@ -2,13 +2,13 @@ using System.Reflection.Metadata.Ecma335;
 
 public class CheckListGoal : Goal
 {
-    int _amountCompleted;
-    int _target;
-    int _bonus;
+    private int _amountCompleted;
+    private int _target;
+    private int _bonus;
 
 
 
-    public CheckListGoal(string name, string description, string points,  int target, int bonus, int amountCompleted = 0) : base(name, description, points)
+    public CheckListGoal(string name, string description, string points,  int target, int bonus, int amountCompleted) : base(name, description, points)
     {
         _amountCompleted = amountCompleted;
         _target = target;
@@ -24,7 +24,7 @@ public class CheckListGoal : Goal
         if (IsComplete())
             hold = _bonus + myBonus;
             
-        SetCompletePoints(hold);  
+        //SetCompletePoints(hold);  
     }
 
     public override bool IsComplete() // complete when amountcompleteted = target
@@ -53,7 +53,7 @@ public class CheckListGoal : Goal
 
     public override string GetStringRepresentational()
     {
-        string fileString = $"Simple Goal|{base.GetShortName()}|{base.GetDesc()}|{base.GetPoints()}|{_amountCompleted}|{_target}|{_bonus}";
+        string fileString = $"CheckList Goal*{base.GetShortName()}*{base.GetDesc()}*{base.GetPoints()}*{_target}*{_bonus}*{_amountCompleted}";
         return fileString;
     }
 

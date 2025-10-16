@@ -2,6 +2,7 @@ using System.ComponentModel;
 
 public class EternalGoal : Goal
 {
+    
 
     public EternalGoal(string name, string description, string points) : base (name, description, points)
     {
@@ -11,8 +12,7 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        string holdPoints = GetPoints();
-        SetCompletePoints(Convert.ToInt32(holdPoints));     
+        Console.WriteLine(" Great you finished a goal.");
     }
 
     public override bool IsComplete() // never complete count times done
@@ -24,7 +24,7 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentational()
     {
-        string fileString = $"Eternal Goal*{base.GetShortName()}*|{base.GetDesc()}*{base.GetPoints()}*{base.GetCompletePoints()}";
+        string fileString = $"Eternal Goal*{base.GetShortName()}*{base.GetDesc()}*{base.GetPoints()}";
         return fileString;
     }
 
