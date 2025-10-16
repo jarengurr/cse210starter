@@ -1,8 +1,8 @@
 public class Swimming : Activity
 {
-    double _numLaps;
+    private double _numLaps;
     //lap = 50 meters
-    public Swimming(string myDate, int myActLength, int myLaps) : base(myDate, myActLength)
+    public Swimming(string myDate, double myActLength, double myLaps) : base(myDate, myActLength)
     {
         _numLaps = Convert.ToDouble(myLaps);
     }
@@ -11,14 +11,28 @@ public class Swimming : Activity
     {
 
     }
-    
-    public int GetDistance()
+
+    public override double GetDistance()
     {
         double newDist;
-        newDist = (_numLaps * 50) / (1000 * .62);
+        newDist = (_numLaps * .03106856);
 
-        return 6;
+        return newDist;
     }
+    
+     public override double GetSpeed()
+    {
+        double holdSpeed = ((_numLaps * .03106856)/GetActLength())* 60;
+        return 4;
+    }
+        
+    public override double GetPace()
+    {
+        return GetActLength()/(_numLaps * .03106856);
+    }
+    
+        
+    
 
 
 }

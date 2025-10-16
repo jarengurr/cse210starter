@@ -1,17 +1,37 @@
 public class Running : Activity
 {
-    int _distance;
+    private double _distance;
 
 
-    public Running(string myDate, int myActLength, int myDist) : base(myDate, myActLength)
+    public Running(string myDate, double myActLength, double myDist) : base(myDate, myActLength)
     {
         _distance = myDist;
     }
-    
-    public int GetSpeed()
+
+    public override double GetSpeed()
     {
-        int holdSpeed = _distance / 
-        return 4;
+        double holdSpeed = _distance / GetActLength();
+
+        return holdSpeed;
 
     }
+
+    public override double GetDistance()
+    {
+        return _distance;
+    }
+    
+    public override double GetPace()
+    {
+        double holdPace = _distance / GetActLength();
+        return holdPace;
+    }
+        
+    
+    
+        
+    
+    
+        
+    
 }
