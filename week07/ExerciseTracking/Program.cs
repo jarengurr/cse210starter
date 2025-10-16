@@ -22,10 +22,10 @@ class Program
         myActivity.Add(mySwim);
         myActivity.Add(myCycle);
 
-      
-      
-      
-      
+
+
+
+        mySwim.GetSummary();
       
       
       
